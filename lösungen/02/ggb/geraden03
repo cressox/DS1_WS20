@@ -1,0 +1,14 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(2.3995025373356222,-0.5352732952773178) rectangle (7.8091915039840645,2.099132529626986);
+\draw [line width=2pt,domain=2.3995025373356222:7.8091915039840645] plot(\x,{(-0-0*\x)/2});
+\draw [line width=2pt,domain=2.3995025373356222:7.8091915039840645] plot(\x,{(-2.25--0.5*\x)/-1.5});
+\draw [line width=2pt,domain=2.3995025373356222:7.8091915039840645] plot(\x,{(-4--1*\x)/-1});
+\end{tikzpicture}
+\end{document}

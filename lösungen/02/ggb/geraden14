@@ -1,0 +1,25 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(2.9319485125148765,-0.09981401212813876) rectangle (8.737468379161866,2.727353214598432);
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-0-0*\x)/2});
+\draw [line width=2pt] (3,-0.09981401212813876) -- (3,2.727353214598432);
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-1.08--0.2*\x)/-2.4});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-2.08--0.4*\x)/-2.2});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-3--0.6*\x)/-2});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-3.84--0.8*\x)/-1.8});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-4.6--1*\x)/-1.6});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-5.28--1.2*\x)/-1.4});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-5.88--1.4*\x)/-1.2});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-6.4--1.6*\x)/-1});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-6.84--1.8*\x)/-0.8});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-7.2--2*\x)/-0.6});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-7.48--2.2*\x)/-0.4});
+\draw [line width=2pt,domain=2.9319485125148765:8.737468379161866] plot(\x,{(-7.68--2.4*\x)/-0.2});
+\end{tikzpicture}
+\end{document}

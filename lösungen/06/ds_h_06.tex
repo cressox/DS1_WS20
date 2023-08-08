@@ -1,0 +1,140 @@
+\documentclass[titlepage]{article}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{multicol} %spalten in seite
+\usepackage{graphicx} %bilder einfügen
+\usepackage{tabto} %tabulator mit \tab
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage[utf8]{inputenc}
+\usepackage{listings} %quellcode
+\pagestyle{plain}
+\pagenumbering{arabic}
+\renewcommand{\arraystretch}{1.3} %vertikaler abstand von tabellen
+\newcommand{\n}{\newline}
+\usepackage[left=20mm, right=15mm, top=25mm, bottom=30mm, paper=a4paper]{geometry}
+
+\begin{document}
+	
+	\title{Diskrete Strukturen - Übung 06}
+	\author{Felix Tischler, Martrikelnummer: 191498}
+	\date{\today}
+	\maketitle
+	
+	\part*{Der Barbier von Sevilla}
+		\section*{1.)}
+		$\mathbb{F}$
+			\subsection*{a)}
+				Angenommen Aturo rasiert sich selbst. Dies führt zu keinem Widerspruch, da Aturo kein Teil von $X$ ist. Somit kann Aturo sich selbst rasieren ohne, das er sich nicht selbst rasieren dürfte. Wenn hingegen Aturo ein Element aus $X$ rasiert, so rasiert dieses Element nicht Aturo. Dies ist auch ohne Widerspruch möglich, durch analoge Argumentation. Wenn nun Aturo nicht ein Element aus $X$ rasiert soll jenes Element ihn rasieren. $X$ ist die Menge jener Männlichen Einwohner mit Ausnahme von Aturo. Warum sollte es also einen Männlichen Einwohner geben der nicht von Aturo rasiert wird? Jedoch ist es egal ob es so einen jemand gibt, denn für den Fall, dass es eine solche Person gibt, ist die Schlussfolgerung nicht mehr als, dass Aturo von ihr rasiert wird. Somit würde Aturo sich auch nicht mehr selbst rasieren, oder er würde sich zusätzlich zu dieser Person rasieren. Es ist also nicht eindeutig definiert, jedoch auch nicht widersprüchlich.
+			\subsection*{b)}
+				Für Roberto gibt es eine grundlegende Frage die zu klären ist. Kann eine Person von mehr als einer Person rasiert werden. Wenn ja liegt hier kein Widerspruch vor, Roberto kann alle männlichen Personen rasieren, einschließlich sich selbst. Und er wird zusätzlich von all jenen rasiert. Wenn eine Person jedoch nur von genau einer Person rasiert werden kann, dann ist diese Variation von "Der Barbier von Sevilla" nur dann widerspruchsfrei, wenn Roberto die einzige männliche Person ist. Andernfalls gäbe es einen Widerspruch.
+			\subsection*{c)}
+				Dies hier beschriebene Szenario führt unweigerlich zu einem Widerspruch. Denn sobald Roberto Aturo rasiert müsste laut Definition aus (b) Aturo auch Roberto rasieren. Dies steht im Widerspruch zur Definition aus (a) den wenn Aturo von jmd. rasiert wird, dann darf er ihn nicht ebenfalls rasieren. Somit ist die Definition dieser Variation widersprüchlich.
+	\part*{Mengen}
+		\section*{2.)}
+			\subsection*{i)}
+				\begin{itemize}
+					\item (a) $A\subseteq B$
+					\item (b) $A\cap B=A$
+					\item (c) $A\cup B=B$
+				\end{itemize}
+			Aus (a) $\Rightarrow$ (b) hierzu sei (a) wahr, man zeigt, dass $A\cap B= A$ gilt indem $A\cap B\subseteq A$ und $A\cap B\supseteq A$ gezeigt wird.:
+			\\\\
+			Fall $A\cap B\subseteq A$:
+			\begin{align*}
+				x\in A\cap B\Leftrightarrow x\in A\wedge x\in B\Rightarrow x\in A\qed
+			\end{align*}
+			Fall $A\cap B\supseteq A$:
+			\begin{align*}
+				x\in A\Rightarrow x\in A\wedge x\in B\Leftrightarrow x\in A\cap B\qed
+			\end{align*}
+			Aus (b) $\Rightarrow$ (c) hierzu sei (b) wahr, man zeigt dass $A\cup B=B$ gilt analog.
+			\\\\
+			Fall $A\cup B\subseteq B$:
+			\begin{align*}
+				A\cap B=A\Rightarrow x\in A\wedge x\in B\Leftrightarrow x\in A\quad(b)\\
+			\end{align*}
+			\begin{align*}
+				x\in A\cup B&\Leftrightarrow x\in A\vee x\in B\\
+				&\Rightarrow(x\in A\wedge x\in B)\vee x\in B\mid (b)\\
+				&=(x\in A\vee x\in B)\wedge(x\in B\vee x\in B)\\
+				&\Rightarrow x\in B\vee x\in B\Rightarrow x\in B\qed
+			\end{align*}
+			Fall $A\cup B\supseteq B$:
+			\begin{align*}
+				x\in B\Rightarrow x\in A\cup B\qed
+			\end{align*}
+			Aus (c) $\Rightarrow$ (a) hierzu sei (c) wahr, es bleibt $A\subseteq B$ zz.:
+			\begin{align*}
+				x\in A\Rightarrow x\in A\vee x\in B\Rightarrow x\in A\cup B\overset{(c)}{\Longleftrightarrow}x\in B\qed
+			\end{align*}
+			\subsection*{ii)}
+				\begin{align*}
+					A\triangle B=\emptyset\Rightarrow(A\cap \bar B)&\cup(\bar A\cap B)=\emptyset\\
+					\\
+					A\cap\bar B=\emptyset&\wedge B\cap\bar A=\emptyset\\
+					(x\in A\Rightarrow x\notin\bar B)&\wedge(x\in B\Rightarrow x\notin\bar A)\\
+					(x\in A\Rightarrow x\in B)&\wedge(x\in B\Rightarrow x\in A)\\
+					A\subseteq B&\wedge B\subseteq A\\
+					A&=B\qed
+				\end{align*}
+		\section*{3.)}
+			\subsection*{a) $A\cap(B\cup C)=(A\cap B)\cup C$}
+				\begin{align*}
+					A\cap(B\cup C)&=(A\cap B)\cup C\\
+					x\in A\wedge(x\in B\vee x\in C)&=(x\in A\wedge x\in B)\vee x\in C\\
+					\\
+					x\in A&\neq(x\in A\wedge x\in B)\\
+					x\in A&\neq x\in C\\
+					(x\in B\vee x\in C)&\neq(x\in A\wedge x\in B)\\
+					(x\in B\vee x\in C)&\neq x\in C\qed
+				\end{align*}
+			D.h. Falsch!
+			\subsection*{b) Mit Voraussetzung $(A\cup B\subseteq A\cap B)$ folgt $A=B$}
+				\begin{align*}
+					A&=B\\
+					x\in A\vee x\in B&=x\in B\\
+					A\cup B&=B\\
+					\overset{vorr.}{\Rightarrow}x\in A\wedge x\in B&=x\in B\\
+					\Rightarrow x\in A&=x\in B\qed
+				\end{align*}
+			D.h. Wahr!
+			\subsection*{c) $((A\cap B=A\cap C)\wedge (A\cup B=A\cup C))\Rightarrow B=C$}
+				\begin{align*}
+					(A\cap B&=A\cap C)\wedge (A\cup B=A\cup C)\\
+					\Rightarrow(A\cap B&=A\cap C)\\
+					\Rightarrow(x\in A\wedge x\in B&=x\in A\wedge x\in C)\\
+					\Rightarrow x\in B&=x\in C\qed
+				\end{align*}
+			D.h. Wahr!
+		\section*{4.)}
+			"Beweisen Sie folgende Aussage durch vollständige Induktion über $n$:\\
+			Wenn eine Menge $M$ genau $n$ Elemente besitzt, dann besitzt ihre Potenzmenge $\mathscr{P}(M)$ genau $2^n$ Elemente."
+			\subsection*{Induktionsanfang} falls:$n=0$\\
+				\begin{align*}
+					M=\emptyset\rightarrow\mathscr{P}(M)=\{\emptyset\}&&\text{somit folgt}&&\mid\mathscr{P}(M)\mid=1=2^0\qed
+				\end{align*}
+			\subsection*{Induktionsvoraussetzung IV}
+			mit: $n=k,n\in\mathbb{N}$\\
+				\begin{align*}
+					\mid M\mid=k\rightarrow\mid\mathscr{P}(M)\mid=2^k
+				\end{align*}
+			\subsection*{Induktionsbehauptung}
+			mit: $n=k+1$\\
+				\begin{align*}
+					\mid M\mid=k+1\rightarrow\mid\mathscr{P}(M)\mid=2^{k+1}
+				\end{align*}
+			\subsection*{Induktionsbeweis}
+				Sei $\mid M\mid=k+1\rightarrow M=\{f_1,f_2,...,f_k,f_{k+1}\}$ somit folgt $\mathscr{P}=\{N\mid N\subseteq\{f_1,f_2,...,f_{k+1}\}\}$\\
+				\begin{align*}
+					A&=\{N\mid N\subseteq\{f_1,f_2,...,f_k\}\}\\
+					&=\mathscr{P}(\{f_1,f_2,...,f_k\})\overset{IV}{\rightarrow}\mid A\mid=2^k\\\\
+					B&=\{N\cup\{a_{k+1}\}\mid N\in A\}\rightarrow\mid B\mid=2^k\\\\
+					\mathscr{P}(M)&=A\cup B\rightarrow\mid\mathscr{P}(M)\mid\\
+					&=\mid A\mid+\mid B\mid=2^k+2^k=2^{k+1}\qed
+				\end{align*}
+				
+\end{document}

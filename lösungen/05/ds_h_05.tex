@@ -1,0 +1,143 @@
+\documentclass[titlepage]{article}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{multicol} %spalten in seite
+\usepackage{graphicx} %bilder einfügen
+\usepackage{tabto} %tabulator mit \tab
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage[utf8]{inputenc}
+\usepackage{listings} %quellcode
+\pagestyle{plain}
+\pagenumbering{arabic}
+\renewcommand{\arraystretch}{1.3} %vertikaler abstand von tabellen
+\newcommand{\n}{\newline}
+\usepackage[left=20mm, right=15mm, top=25mm, bottom=30mm, paper=a4paper]{geometry}
+\renewcommand{\n}{\newline}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\O}{\mathbb{O}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+	
+	\title{Diskrete Strukturen - Übung 05}
+	\author{Felix Tischler, Martrikelnummer: 191498}
+	\date{\today}
+	\maketitle
+	
+	\part*{Das Prinzip der Vollständigen Induktion}
+	\section*{1.) Anwendung des Induktionsprinzip in der Analysis}
+		\begin{align*}
+			(1+x)^n&\ge1+n\cdot x
+		\end{align*}
+		\subsection*{Induktionsanfang} falls: $n=1$\\
+		\scalebox{1.2}{\parbox{.5\linewidth}{%
+				\begin{align*}
+					(1+x)&\ge1+1\cdot x\qed
+				\end{align*}
+		}}
+		\subsection*{Induktionsvoraussetzung IV}
+		mit: $n=k\in\N$\\
+		\scalebox{1.2}{\parbox{.5\linewidth}{%
+				\begin{align*}
+					(1+x)^k&\ge1+k\cdot x
+				\end{align*}
+		}}
+		\subsection*{Induktionsbehauptung}
+		mit: $n=k+1$\\
+		\scalebox{1.2}{\parbox{.5\linewidth}{%
+				\begin{align*}
+					(1+x)^{k+1}&\ge1+(k+1)\cdot x
+				\end{align*}
+		}}
+		\subsection*{Induktionsbeweis}
+		\scalebox{1.2}{\parbox{.5\linewidth}{%
+				\begin{align*}
+					(1+x)^{k+1}&=(1+x)^k\cdot(1+x)\\
+					(1+x)^{k+1}&\overset{IV}{\ge}(1+k\cdot x)\cdot(1+x)\\
+					&=1+x+kx+kx^2\\
+					&=1+(k+1+kx)x\\
+					&\ge1+(k+1)x\qed
+				\end{align*}
+		}}
+	\section*{2.) Anwendung des Induktionsprinzips in der Geometrie}
+		Sei $Z_n:=\{\text{Zerlegungen der Ebene durch n Geraden}\}$ und $A(Z_n):=Z_n$ färbbar durch zwei Farben.
+		\subsection*{Induktionsanfang} Sei $n=1$, da jede Zerlegung der Ebene mit einer Geraden zu zwei Gebieten führt ist $A(Z_1)$ wahr.
+		\subsection*{Induktionsvoraussetzung IV}
+		mit: $n=k\in\N$ wird im folgenden $A(Z_k)$ als wahr vorausgesetzt.
+		\subsection*{Induktionsbehauptung}
+		mit: $n=k+1$ ist nun zu zeigen, das $A(Z_{k+1})$ wahr ist.
+		\subsection*{Induktionsbeweis}
+		Laut IV ist $A(Z_k)$ färbbar und $A(Z_{k+1})$ ist die k-fache Zerlegung der Ebene unter der Hinzugabe einer weiteren Geraden. Eine Gerade kann die bereits vorhandene Teilebenen halbieren oder sie lässt sie unberührt. Ersteres lässt zwei neue Teilebenen entstehen welche die selbe Farbe besitzen. Tauscht man in einer und nur einer von zwei solchen Teilebenen die Farbe, \\\\und macht man dies konsequent für alle entstandenen Teilebenen, dann gilt $A(Z_{k+1})$ \qedsymbol
+	\section*{3.) Anwendung einer Vorwärts-Rückwärts-Induktion}
+		\begin{align*}
+			E(n)=x_1\cdot...\cdot x_n\le\left(\frac{x_1+...+x_n}{n}\right)^n\text{, falls $x_1,...,x_n>0$}
+		\end{align*}
+		\subsection*{a)}
+			\begin{align*}
+				E(2)=x_1x_2&\le\left(\frac{x_1+x_2}{2}\right)^2\\
+				\sqrt{x_1x_2}&\le\frac{x_1+x_2}{2}
+			\end{align*}
+		Wenn $x_1=x_2$:
+		\begin{align*}
+			\sqrt{x_1x_2}&=\frac{x_1+x_2}{2}
+		\end{align*}
+		Es gilt:
+		\begin{align*}
+			0\le(x_1-x_2)^2=x_1^2-2x_1x_2+x_2^2
+		\end{align*}
+		Wenn $x_1\neq x_2$
+		\begin{align*}
+			0&<(x_1-x_2)^2\mid+4x_1x_2\\
+			4x_1x_2&<x_1^2-2x_1x_2-x_2^2+4x_1x_2\mid Binom\\
+			4x_1x_2&<(x_1+x_2)^2\mid\sqrt{}\\
+			\sqrt{x_1x_2}&<\frac{x_1+x_2}{2}\qed			
+		\end{align*}
+		\subsection*{b)}
+			\begin{align*}
+				E(n-1)&=x_1\cdot...\cdot x_n\cdot x_{n-1}\le\left(\frac{x_1+...+x_n+x_{n-1}}{n-1}\right)^{n-1}
+			\end{align*}
+		Mit $x_n=\frac{x_1+...+x_{n-1}}{n-1}$
+		\begin{align*}
+			x_1\cdot...\cdot \frac{x_1+...+x_{n-1}}{n-1}\cdot x_{n-1}&\le\left(\frac{x_1+...+(\frac{x_1+...+x_{n-1}}{n-1})+x_{n-1}}{n-1}\right)^{n-1}\\
+			\frac{x_1\cdot...\cdot(x_1+...+x_{n-1})\cdot x_{n-1}}{n-1}&\le\left(\frac{x_1(n-1)+...(x_1+...+x_{n-1})+x_{n-1}(n-1)}{(n-1)^2}\right)^{n-1}\qed\\
+		\end{align*}
+		Da $n>1$ ist $x_1(n-1)+...(x_1+...+x_{n-1})+x_{n-1}(n-1)\ge(n-1)$ d.h. $\frac{x_1(n-1)+...(x_1+...+x_{n-1})+x_{n-1}(n-1)}{(n-1)^2}\ge0$.
+		\subsection*{c)}
+		\begin{align*}
+			E(n)&=x_1\cdot...\cdot x_n\le\left(\frac{x_1+...+x_n}{n}\right)^n\\
+			E(2)&=x_1x_2\le\left(\frac{x_1+x_2}{2}\right)^2\\
+			E(2n)&=x_1\cdot x_2\cdot...\cdot x_n\cdot x_{2n}\le\left(\frac{x_1+...+x_{2n}}{2n}\right)^{2n}\\
+		\end{align*}
+		\begin{align*}
+		\end{align*}
+		\subsection*{d)}
+
+		
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-0.9758674155848819,-1.5846081100011586) rectangle (12.283896684789129,7.667540721229959);
+\draw [line width=2pt] (0,0)-- (1.7900072659769493,0);
+\draw [line width=2pt] (1.7900072659769493,0)-- (5,0);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0,0) circle (2pt);
+\draw[color=uuuuuu] (0.10025149927756115,0.23984637209321286) node {$A$};
+\draw [fill=xdxdff] (5,0) circle (2.5pt);
+\draw[color=xdxdff] (5.097401402776723,0.26458473795211956) node {$B$};
+\draw [fill=xdxdff] (1.7900072659769493,0) circle (2.5pt);
+\draw[color=xdxdff] (1.8937830240482996,0.26458473795211956) node {$T$};
+\draw[color=black] (0.9413559384803902,-0.04464483528421459) node {$k$};
+\draw[color=black] (3.4399308902299706,-0.04464483528421459) node {$g$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-0.24156226394636263,-0.42773193500256884) rectangle (3.283337876537244,1.814296385645171);
+\draw [line width=2pt] (0,0)-- (1,0);
+\draw [line width=2pt] (0,0.6180339887498949)-- (0,0);
+\draw [line width=2pt] (1,0.6180339887498949)-- (1,0);
+\draw [line width=2pt] (0,0.6180339887498949)-- (1,0.6180339887498949);
+\draw [line width=2pt] (0.6180339887498949,0.6180339887498949)-- (0.6180339887498949,0);
+\begin{scriptsize}
+\draw [fill=ududff] (0,0) circle (2.5pt);
+\draw[color=ududff] (0.02520313784193754,0.06533445369603168) node {$A$};
+\draw [fill=ududff] (1,0) circle (2.5pt);
+\draw[color=ududff] (1.0233253714992854,0.06533445369603168) node {$T$};
+\draw[color=black] (0.5107761163779446,-0.012597011994932537) node {$L$};
+\draw [fill=ududff] (1,0.6180339887498949) circle (2.5pt);
+\draw[color=ududff] (1.0353148277594337,0.6827914510936712) node {$T'$};
+\draw [fill=ududff] (0,0.6180339887498949) circle (2.5pt);
+\draw[color=ududff] (0.03719259410208586,0.6827914510936712) node {$A'$};
+\draw[color=black] (0.9633780901985438,0.34408931174448065) node {$l$};
+\draw [fill=ududff] (0.6180339887498949,0) circle (2.5pt);
+\draw[color=ududff] (0.7145968728004661,0.06533445369603168) node {$Teilung$};
+\draw [fill=ududff] (0.6180339887498949,0.6180339887498949) circle (2.5pt);
+\draw[color=ududff] (0.6426601352395762,0.6827914510936712) node {$P$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
